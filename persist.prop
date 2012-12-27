@@ -1,0 +1,5 @@
+#
+# system props for the fmc feature
+#
+persist.dsds.enabled=true
+persist.sys.timeout.light.but=4000
