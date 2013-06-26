@@ -207,8 +207,10 @@ endif
 # dmesg dump cmm file
 #----------------------------------------------------------------------
 
+ifeq ($(TARGET_PREBUILT_KERNEL),)
 DMESG_DUMP := $(PRODUCT_OUT)/dmesg_dump.cmm
 droidcore : $(DMESG_DUMP)
 $(DMESG_DUMP) : kernel
 	echo "d.save.binary * " \
     $(shell echo $$[0x$(shell cat $(PRODUCT_OUT)/obj/KERNEL_OBJ/System.map|grep __log_buf|awk '{print $$1}') - 0xc0000000 + 0x200000]|awk '{printf "0x%x",$$0}')"++0x20000" > $(DMESG_DUMP)
+endif
