@@ -5,16 +5,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 $(call inherit-product, device/qcom/common/common.mk)
 
-#LogSystem
-LogSystem := LogKit
-LogSystem += SystemAgent
-LogSystem += qlogd
-LogSystem += qlog-conf.xml
-LogSystem += diag_mdlog
-
 PRODUCT_PACKAGES += \
-	com.invensense.android.hardware.xml \
-	com.invensense.android.hardware \
 	libgesture_manager_jni \
 	libmpl_sys_jni \
 	libmpl_ped_jni \
@@ -22,12 +13,6 @@ PRODUCT_PACKAGES += \
 	libmlplatform \
 	libmplmpu \
 	sensors.msm7627a \
-	fat.img \
-	fatbak.img \
-	fatimgcheck \
-	vold.emmc.fstab \
-	vold.origin.fstab \
-	vold.fat.fstab \
 	akmdfs \
 	FastBoot \
 	RestoreAirplaneMode \
